@@ -1,5 +1,6 @@
 const express = require("express");
 const hbs = require("hbs");
+const port = process.env.PORT || 3000;
 var app = express();
 hbs.registerPartials(__dirname+"/views/partials");
 hbs.registerHelper("getCurrentYear",()=>{
@@ -25,4 +26,4 @@ app.get("/about", (req,res)=>{
     });
 });
 
-app.listen(80);
+app.listen(port);
